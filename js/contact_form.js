@@ -25,11 +25,14 @@ function submitForm() {
     const m = document.getElementById("mesaj").value;
     const f = document.getElementById("form-feedback");
 
+    console.log("Date formular:", { nume: n, email: e, mesaj: m });
+
     if (n.length < 2 || !e.includes('@') || m.length < 10) {
         f.textContent = "Eroare: Te rugam sa completezi toate campurile corect.";
         f.style.color = "#ff4655";
     } else {
         f.textContent = "Mesajul a fost trimis cu succes.";
         f.style.color = "#00ff00";
+        console.log("Status: Validare reusita!");
     }
 }
