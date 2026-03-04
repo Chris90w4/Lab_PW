@@ -1,60 +1,76 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mocanita Christian // Portofoliu</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mocanita Christian // Portofoliu</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <img src="me.png" alt="Profile" id="profile-pic">
-        <h1>Mocanita Christian</h1>
-        <p id="greeting-msg">Facultatea de Inginerie Electrica si Stiinta Calculatoarelor UNITBV</p>
-        <div class="header-line"></div>
-        
-        <nav class="extend-nav">
-            <div class="trigger" data-target="education">EDUCATIE <span class="arrow">&#9660;</span></div>
-            <div class="trigger" data-target="about">DETALII MELE <span class="arrow">&#9660;</span></div>
-        </nav>
-    </header>
+<header>
+<img src="me.png" alt="Profile" id="profile-pic">
+<h1>Mocanita Christian</h1>
+<p id="greeting-msg">Facultatea de Inginerie Electrica si Stiinta Calculatoarelor UNITBV</p>
+<div class="header-line"></div>
 
-    <main class="split-view">
-        <section id="education" class="expandable-content">
-            <ol class="custom-list">
-                <li>Liceul Economic Mihail Kogalniceanu - Focsani</li>
-                <li>UNITBV - IESC</li>
-            </ol>
-        </section>
+<nav class="extend-nav">
+<div class="trigger" data-target="education">EDUCATIE <span class="arrow">&#9660;</span></div>
+<div class="trigger" data-target="about">DETALII MELE <span class="arrow">&#9660;</span></div>
+</nav>
+</header>
 
-        <section id="about" class="expandable-content">
-            <p class="status-red">Hobby-uri & Interese</p>
-            <ul class="custom-list">
-                <li>Programare</li>
-                <li>Gaming</li>
-                <li>Desen</li>
-            </ul>
-        </section>
-    </main>
+<main class="split-view">
+<section id="education" class="expandable-content">
+<ol class="custom-list">
+<li>Liceul Economic Mihail Kogalniceanu - Focsani</li>
+<li>UNITBV - IESC</li>
+</ol>
+</section>
 
-    <footer>
-        <div class="contact-section">
-            <h3>CONTACT</h3>
-            <form id="contact-form">
-                <div class="field"><label>NUME</label><input type="text" id="nume"></div>
-                <div class="field"><label>EMAIL</label><input type="email" id="email"></div>
-                <div class="field"><label>MESAJ</label><textarea id="mesaj"></textarea></div>
-                <button type="button" class="btn-red" onclick="submitForm()">TRIMITE</button>
-                <p id="form-feedback"></p>
-            </form>
-        </div>
-        <div class="footer-info">
-            <p>Email: mocanitachristian1234@gmail.com</p>
-            <p class="copy">&copy; 2026 Mocanita Christian</p>
-        </div>
-    </footer>
+<section id="about" class="expandable-content">
+<p class="status-red">Hobby-uri & Interese</p>
+<ul class="custom-list">
+<li>Programare</li>
+<li>Gaming</li>
+<li>Desen</li>
+</ul>
+</section>
+</main>
 
-    <script src="js/contact_form.js"></script>
+<footer>
+<div class="contact-section">
+<h3>CONTACT</h3>
+
+<form id="contact-form">
+<div class="field">
+<label for="nume">NUME</label>
+<input type="text" id="nume">
+</div>
+
+<div class="field">
+<label for="email">EMAIL</label>
+<input type="email" id="email">
+</div>
+
+<div class="field">
+<label for="mesaj">MESAJ</label>
+<textarea id="mesaj"></textarea>
+</div>
+
+<button type="submit" class="btn-red">TRIMITE</button>
+<p id="form-feedback"></p>
+</form>
+
+</div>
+
+<div class="footer-info">
+<p>Email: mocanitachristian1234@gmail.com</p>
+<p class="copy">&copy; 2026 Mocanita Christian</p>
+</div>
+</footer>
+
+<script src="js/contact_form.js"></script>
+
 </body>
 </html>
