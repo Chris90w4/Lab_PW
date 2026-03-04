@@ -3,17 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
 const h = new Date().getHours()
 const g = document.getElementById("greeting-msg")
 
-if (h >= 6 && h < 12) {
-g.textContent = "Buna dimineata! Bine ai venit pe pagina mea."
-}
-else if (h >= 12 && h < 18) {
-g.textContent = "Buna ziua! Bine ai venit pe pagina mea."
-}
-else {
-g.textContent = "Buna seara! Bine ai venit pe pagina mea."
-}
+if (h >= 6 && h < 12) g.textContent = "Buna dimineata! Bine ai venit pe pagina mea."
+else if (h >= 12 && h < 18) g.textContent = "Buna ziua! Bine ai venit pe pagina mea."
+else g.textContent = "Buna seara! Bine ai venit pe pagina mea."
 
-const triggers = document.querySelectorAll(".trigger")
+const triggers = document.querySelectorAll(".trigger[data-target]")
 
 triggers.forEach(trigger => {
 trigger.addEventListener("click", () => {
@@ -38,8 +32,6 @@ const n = document.getElementById("nume").value.trim()
 const e = document.getElementById("email").value.trim()
 const m = document.getElementById("mesaj").value.trim()
 
-console.log("Date formular:", { nume: n, email: e, mesaj: m })
-
 if (n.length < 2) {
 feedback.textContent = "Nume prea scurt!"
 feedback.style.color = "red"
@@ -62,6 +54,20 @@ feedback.textContent = `Multumim, ${n}! Mesajul a fost trimis.`
 feedback.style.color = "green"
 
 form.reset()
+
+})
+
+const themeToggle = document.getElementById("theme-toggle")
+
+themeToggle.addEventListener("click", () => {
+
+document.body.classList.toggle("dark-mode")
+
+if (document.body.classList.contains("dark-mode")) {
+themeToggle.textContent = "☀ Light Mode"
+} else {
+themeToggle.textContent = "🌙 Dark Mode"
+}
 
 })
 
