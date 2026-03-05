@@ -15,28 +15,47 @@
 <div class="header-line"></div>
 
 <nav class="extend-nav">
-<div class="trigger" data-target="education">EDUCATIE <span class="arrow">&#9660;</span></div>
-<div class="trigger" data-target="about">DETALII MELE <span class="arrow">&#9660;</span></div>
-<div id="theme-toggle" class="trigger">🌙 Dark Mode</div>
+<ul class="nav-list">
+<li class="trigger active" data-target="education">EDUCATIE <span class="arrow">&#9660;</span></li>
+<li class="trigger active" data-target="about">DETALII MELE <span class="arrow">&#9660;</span></li>
+<li id="theme-toggle" class="theme-toggle" tabindex="0">🌙 Dark Mode</li>
+</ul>
 </nav>
 </header>
 
-<main class="split-view">
-<section id="education" class="expandable-content">
+<main class="stack-view">
+
+<section id="education" class="panel show">
+<div class="panel-head">
+<h2 class="section-title"><span class="caret">▼</span> Educație</h2>
+</div>
+<div class="panel-body section-content">
 <ol class="custom-list">
 <li>Liceul Economic Mihail Kogalniceanu - Focsani</li>
 <li>UNITBV - IESC</li>
 </ol>
+</div>
 </section>
 
-<section id="about" class="expandable-content">
+<section id="about" class="panel show">
+<div class="panel-head">
+<h2 class="section-title"><span class="caret">▼</span> Detalii mele</h2>
+</div>
+<div class="panel-body section-content">
 <p class="status-red">Hobby-uri & Interese</p>
+<p class="about-paragraph">
+În timpul liber îmi place să explorez lucruri noi din domeniul tehnologiei și să îmi dezvolt abilitățile în programare. Îmi place să experimentez cu idei simple și să le transform în proiecte care mă ajută să învăț. Consider că practica, curiozitatea și consecvența sunt cele mai importante atunci când vrei să evoluezi în IT.
+</p>
 <ul class="custom-list">
-<li>Programare</li>
-<li>Gaming</li>
-<li>Desen</li>
+<li>Programare web și experimente cu JavaScript</li>
+<li>Gaming și explorarea diferitelor tipuri de jocuri</li>
+<li>Desen digital și schițe rapide</li>
+<li>Învățarea de tehnologii noi</li>
+<li>Crearea de proiecte personale pentru portofoliu</li>
 </ul>
+</div>
 </section>
+
 </main>
 
 <footer>
@@ -44,25 +63,12 @@
 <h3>CONTACT</h3>
 
 <form id="contact-form">
-<div class="field">
-<label for="nume">NUME</label>
-<input type="text" id="nume">
-</div>
-
-<div class="field">
-<label for="email">EMAIL</label>
-<input type="email" id="email">
-</div>
-
-<div class="field">
-<label for="mesaj">MESAJ</label>
-<textarea id="mesaj"></textarea>
-</div>
-
+<div class="field"><label for="nume">NUME</label><input type="text" id="nume"></div>
+<div class="field"><label for="email">EMAIL</label><input type="email" id="email"></div>
+<div class="field"><label for="mesaj">MESAJ</label><textarea id="mesaj"></textarea></div>
 <button type="submit" class="btn-red">TRIMITE</button>
 <p id="form-feedback"></p>
 </form>
-
 </div>
 
 <div class="footer-info">
@@ -71,7 +77,8 @@
 </div>
 </footer>
 
-<script src="js/contact_form.js"></script>
+<button id="back-to-top" class="back-to-top hidden" type="button">⬆ Back to top</button>
 
+<script src="js/contact_form.js"></script>
 </body>
 </html>
