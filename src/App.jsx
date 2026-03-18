@@ -1,9 +1,12 @@
-function App() { 
-    return ( 
-        <div> 
-            <h1>Dashboard</h1> 
-            <p>Mocanita Christian</p> 
-        </div> 
-    ); 
+import Card from './Card';
+
+function App() {
+    return (
+        <div>
+            <h1>Dashboard</h1>
+            <Card />
+        </div>
+    );
 }
-export default App
+
+export default App;
