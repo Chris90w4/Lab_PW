@@ -1,5 +1,6 @@
 import Card from './Card';
 import QuickNote from './QuickNote';
+import TodoList from './TodoList';
 
 const projects = [
     { title: "Proiect 1", description: "Pagina personala" },
@@ -12,6 +13,7 @@ function App() {
         <div>
             <h1>Dashboard</h1>
             <QuickNote />
+            <TodoList />
             {projects.map(function(item, index) {
                 return (
                     <Card
