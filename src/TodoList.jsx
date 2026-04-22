@@ -3,13 +3,13 @@ function TodoList() {
  const [todos, setTodos] = useState([]);
  const [input, setInput] = useState('');
  function handleAdd() {
- if (input.trim() === '') return; // Nu adauga text gol
- setTodos([...todos, input]); // Creeaza array NOU cu tot ce era + input
- setInput(''); // Goleste input-ul
- }
+    if (input.trim() === '') return; // Nu adauga text gol
+        setTodos([...todos, input]); // Creeaza array NOU cu tot ce era + input
+        setInput(''); // Goleste input-ul
+    }
  function handleDelete(index) {
- setTodos(todos.filter(function(_, i) {
- return i !== index;
+    setTodos(todos.filter(function(_, i) {
+    return i !== index;
  }));
  }
  return (
@@ -32,8 +32,8 @@ function TodoList() {
         );
     })}
 </ul>
- </ul>
- </div>
- );
+</ul>
+</div>
+);
 }
 export default TodoList;

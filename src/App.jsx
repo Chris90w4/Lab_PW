@@ -1,30 +1,19 @@
 import Card from './Card';
 import QuickNote from './QuickNote';
 import TodoList from './TodoList';
-
-const projects = [
-    { title: "Proiect 1", description: "Pagina personala" },
-    { title: "Proiect 2", description: "Calculator buget" },
-    { title: "Proiect 3", description: "Dashboard React" },
-];
+import ContactForm from './ContactForm';
+import ProjectList from './ProjectList';
 
 function App() {
-    return (
-        <div>
-            <h1>Dashboard</h1>
-            <QuickNote />
-            <TodoList />
-            {projects.map(function(item, index) {
-                return (
-                    <Card
-                        key={index}
-                        title={item.title}
-                        description={item.description}
-                    />
-                );
-            })}
-        </div>
-    );
+  return (
+    <div className="App">
+      <h1>Dashboard</h1>
+      <QuickNote />
+      <TodoList />
+      <ContactForm />
+      
+      <ProjectList /> 
+    </div>
+  );
 }
-
 export default App;
