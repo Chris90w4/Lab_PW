@@ -5,11 +5,12 @@ function ProjectList() {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    
+    const [search, setSearch] = useState('');
 
     useEffect(function() {
-        fetch('/data/projectsd.json')
-            .then(function(response) {if (!response.ok) {
+        fetch("public/data/projects.json")
+            .then(function(response) {
+                if (!response.ok) {
                     throw new Error("Fisierul JSON nu a putut fi gasit.");
                 }
                 return response.json();
@@ -18,9 +19,9 @@ function ProjectList() {
                 setProjects(data.projects);
                 setLoading(false);
             })
-            .catch(function(error) {
-                console.error("Eroare la fetch:", error);
-                setError("A aparut o eroare la incarcarea proiectelor.");
+            .catch(function() {
+                // Am scos 'err' de aici pentru ca nu il foloseai
+                setError('Eroare la incarcarea datelor');
                 setLoading(false);
             });
     }, []);
@@ -30,15 +31,28 @@ function ProjectList() {
     }
 
     if (error) {
-        return <p style={{ color: 'red', padding: '10px' }}>{error}</p>;
+        return <p style={{ color: 'red' }}>{error}</p>;
     }
 
-console.log("Proiecte: ", projects);
+    const filteredProjects = projects.filter(function(p) {
+        return p.title.toLowerCase().includes(search.toLowerCase());
+    });
+
+    const totalProiecte = projects.length;
+    const finalizate = projects.filter(p => p.done).length;
+    const inLucru = projects.filter(p => !p.done).length;
 
     return (
         <div>
             <h3>Proiecte din JSON</h3>
-            {projects.map(function(item) {
+            
+            <input 
+                value={search} 
+                onChange={(e) => setSearch(e.target.value)} 
+                placeholder="Cauta proiect..."
+            />
+
+            {filteredProjects.map(function(item) {
                 return (
                     <Card 
                         key={item.id} 
@@ -47,6 +61,12 @@ console.log("Proiecte: ", projects);
                     />
                 );
             })}
+
+            <div style={{ marginTop: '20px', borderTop: '1px solid gray' }}>
+                <p>Total proiecte: {totalProiecte}</p>
+                <p>Finalizate: {finalizate}</p>
+                <p>In lucru: {inLucru}</p>
+            </div>
         </div>
     );
 }
