@@ -20,7 +20,6 @@ function ProjectList() {
                 setLoading(false);
             })
             .catch(function() {
-                // Am scos 'err' de aici pentru ca nu il foloseai
                 setError('Eroare la incarcarea datelor');
                 setLoading(false);
             });
