@@ -1,5 +1,4 @@
 const express = require('express');
-const cors = require('cors');
 const app = express();
 
 const mongoose = require('mongoose'); 
@@ -9,12 +8,16 @@ console.log('Conectat la MongoDB!');
 }) 
 .catch(function(err) { 
 console.error('Eroare conectare MongoDB:', err); 
-}); 
+});
+
 const Project = require('./models/Project');
 const PORT = 3000;
 
-app.use(cors());
 app.use(express.json());
+
+const cors = require('cors');
+app.use(cors());
+
 
 // Prima ruta: raspunde la GET /
 app.get('/', function(req, res) {
