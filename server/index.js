@@ -59,15 +59,18 @@ app.get('/api/projects', async function(req, res) {
 // });
 
 // POST /api/projects - adauga un proiect nou
-app.post('/api/projects', function(req, res) {
- const newProject = {
- id: projects.length + 1,
- title: req.body.title,
- tech: req.body.tech,
- done: req.body.done || false,
- };
- projects.push(newProject);
- res.status(201).json(newProject);
+app.post('/api/projects', async function(req, res) { 
+    try { 
+        const newProject = new Project({ 
+            title: req.body.title, 
+            tech: req.body.tech, 
+            done: req.body.done || false, 
+        }); 
+        const saved = await newProject.save(); 
+        res.status(201).json(saved); 
+    } catch (err) { 
+        res.status(400).json({ error: err.message }); 
+    } 
 });
 
 app.delete('/api/projects/:id', function (req, res) {
